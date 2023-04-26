@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "Dovemayo_gothic";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$bg-color: #fffbf5;
+$font-color: #674188;
+$box-border: #c3acd0;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $bg-color;
+  color: $font-color;
+}
+
+.main {
+  font-family: "Dovemayo_gothic";
+  height: 100vh;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  li,
+  a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+}
+
+// header
+.header {
+  text-align: center;
+  padding: 0.5em 0;
+  margin-bottom: 5em;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+// home
+.home-box {
+  border: 1px solid $box-border;
+  border-radius: 5px;
+  margin-bottom: 2em;
+  height: 15em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  animation: fade 2s;
+  &:hover {
+    box-shadow: 0 0 10px;
+    transition: 0.3s;
+  }
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+  from {
+    opacity: 0;
+  }
+}
+
+// rock
+.rock-wrap {
+  border: 1px solid red;
+  text-align: center;
+}
