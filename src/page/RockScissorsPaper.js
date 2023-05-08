@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import RockGameBox from "../component/RockGameBox";
+import { Link } from "react-router-dom";
 
 const choice = {
   rock: {
@@ -21,8 +22,6 @@ const RockScissorsPaper = () => {
   const [userSelect, setUserSelect] = useState(null);
   const [computerSelect, setComputerSelect] = useState(null);
   const [result, setResult] = useState("");
-  const [gameCount, setGameCount] = useState(10);
-  const [playBtn, setPlayBtn] = useState(false);
 
   const play = (userChoice) => {
     setUserSelect(choice[userChoice]);
@@ -31,13 +30,6 @@ const RockScissorsPaper = () => {
     setComputerSelect(computerChoice);
 
     setResult(judgement(choice[userChoice], computerChoice));
-
-    if (gameCount > 0) {
-      setGameCount(gameCount - 1);
-    } else {
-      alert("Game Over");
-      setPlayBtn(true);
-    }
   };
 
   const judgement = (user, computer) => {
@@ -69,25 +61,15 @@ const RockScissorsPaper = () => {
       <div className="rock-title">
         <h1>가위✌ 바위👊 보🖐</h1>
       </div>
-
       <div className="rock-box">
         <RockGameBox title="You" item={userSelect} result={result} />
         <RockGameBox title="Computer" item={computerSelect} result={result} />
       </div>
-      <div>{gameCount}</div>
+
       <div className="play-btn">
-        <button onClick={() => play("scissors")} disabled={playBtn}>
-          가위
-        </button>
-        <button onClick={() => play("rock")} disabled={playBtn}>
-          바위
-        </button>
-        <button onClick={() => play("paper")} disabled={playBtn}>
-          보
-        </button>
-      </div>
-      <div>
-        <a href="rock">다시시작</a>
+        <button onClick={() => play("scissors")}>가위</button>
+        <button onClick={() => play("rock")}>바위</button>
+        <button onClick={() => play("paper")}>보</button>
       </div>
     </Container>
   );

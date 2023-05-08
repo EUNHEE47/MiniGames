@@ -8,6 +8,10 @@ const Box = ({ name }) => {
   const goToGame = () => {
     if (name === "가위 바위 보") {
       navigate("/rock");
+    } else if (name === "구구단") {
+      navigate("/multi");
+    } else if (name === "숫자 야구 게임") {
+      navigate("/numberBaseball");
     }
   };
 

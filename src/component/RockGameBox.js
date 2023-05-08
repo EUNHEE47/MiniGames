@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 const RockGameBox = (props) => {
   let result;
 
@@ -13,11 +14,10 @@ const RockGameBox = (props) => {
   }
 
   return (
-    <div>
-      <p>{props.title}</p>
-      <p>{props.item && props.item.name}</p>
+    <div className={`show-play ${result}`}>
+      <h2>{props.title}</h2>
       <img className="img" src={props.item && props.item.img} />
-      <p>{result}</p>
+      <h3>{result}</h3>
     </div>
   );
 };

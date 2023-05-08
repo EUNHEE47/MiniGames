@@ -58,24 +58,68 @@ $box-border: #c3acd0;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  animation: fade 2s;
+  animation-name: move;
+  animation-delay: 2s;
   &:hover {
     box-shadow: 0 0 10px;
     transition: 0.3s;
   }
 }
 
-@keyframes fade {
-  to {
-    opacity: 1;
-  }
-  from {
-    opacity: 0;
-  }
-}
+// @keyframes move {
+//   from {
+//     opacity: 0;
+//   }
+//   to {
+//     opacity: 1;
+//   }
+// }
 
 // rock
 .rock-wrap {
-  border: 1px solid red;
   text-align: center;
+  div {
+    margin: 1em;
+  }
+}
+
+.rock-box {
+  display: flex;
+  justify-content: center;
+  height: 25em;
+}
+
+.show-play {
+  border: 3px solid $box-border;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    width: 50%;
+  }
+}
+
+.tie {
+  border: 3px solid black;
+}
+
+.win {
+  border: 3px solid red;
+}
+
+.play-btn {
+  button {
+    border: 1px solid $box-border;
+    width: 3em;
+    height: 3em;
+    border-radius: 100%;
+    margin: 0 1em;
+    &:hover {
+      background-color: $font-color;
+      color: $bg-color;
+    }
+  }
 }

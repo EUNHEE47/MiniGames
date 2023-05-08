@@ -5,8 +5,8 @@ import Box from "../component/Box";
 const Home = () => {
   const games = [
     "가위 바위 보",
-    "숫자 맞추기 게임",
-    "숫자 맞추기 게임",
+    "구구단",
+    "숫자 야구 게임",
     "숫자 맞추기 게임",
     "숫자 맞추기 게임",
   ];
