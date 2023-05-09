@@ -99,3 +99,56 @@ $box-border: #c3acd0;
 .lose {
   border: 3px solid black;
 }
+
+// num-game-play-box
+.num-game-play-box {
+  border-radius: 5px;
+  margin: auto;
+  text-align: center;
+  width: 30em;
+  h3 {
+    margin: 0;
+  }
+}
+
+.numGame-form {
+  margin: 3em 0;
+  input {
+    border: 3px solid $box-border;
+    border-radius: 5px;
+    margin-right: 0.5em;
+    &:focus {
+      outline: none;
+    }
+  }
+  button {
+    width: 3em;
+    border: 3px solid $box-border;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+.btn-true {
+  background-color: gray;
+}
+
+.chances-text {
+  h5 {
+    color: red;
+  }
+}
+
+.num-replay-btn {
+  width: 30em;
+  margin: 3em auto;
+  text-align: center;
+  button {
+    border: 3px solid $box-border;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    &:hover {
+      background-color: $box-border;
+    }
+  }
+}

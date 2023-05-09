@@ -1,16 +1,17 @@
 import React, { useState } from "react";
+import { Container } from "react-bootstrap";
 
 const GuessingNumbers = () => {
-  const [status, setStatus] = useState("1~100사이의 숫자를 입력해 주세요.");
+  const [status, setStatus] = useState("1~100사이의 숫자를 맞춰보세요😊");
   const [value, setValue] = useState("");
   const [chances, setChances] = useState(10);
   const [history, setHistory] = useState([]);
+  const [gameOver, setGameOver] = useState(false);
   const [randomNum, setRandomNum] = useState(
     Math.floor(Math.random() * 100) + 1
   );
 
-  console.log("randomNum ? ", randomNum);
-  console.log("value?", value);
+  // console.log("randomNum ? ", randomNum);
 
   const userPlay = (e) => {
     e.preventDefault();
@@ -20,36 +21,79 @@ const GuessingNumbers = () => {
       return;
     }
 
+    if (history.includes(value)) {
+      setStatus("이미 입력한 숫자 입니다.");
+      setValue("");
+      return;
+    }
+
     setChances(chances - 1);
+    setHistory((history) => [...history, value]);
 
     if (value < randomNum) {
-      setStatus("Up!");
+      setStatus("UP");
       setValue("");
     } else if (value > randomNum) {
-      setStatus("Down!");
+      setStatus("DOWN!!");
       setValue("");
     } else {
       setStatus("정답입니다!");
-      setValue("");
+      setGameOver(true);
+    }
+
+    if (chances <= 1) {
+      setGameOver(true);
     }
   };
 
+  const replay = () => {
+    setRandomNum(Math.floor(Math.random() * 100) + 1);
+    setGameOver(false);
+    setChances(10);
+    setStatus("1~100사이의 숫자를 맞춰보세요😊");
+    setHistory([]);
+    setValue("");
+  };
+
   return (
-    <div>
-      <div>Up & Down</div>
-      <div>
-        <div>{status}</div>
-        <form onSubmit={userPlay}>
+    <Container>
+      <div className="game-title">
+        <h1>Up & Down</h1>
+      </div>
+      <div className="num-game-play-box">
+        <div>
+          <h3>{status}</h3>
+        </div>
+        <form className="numGame-form" onSubmit={userPlay}>
           <input
             type="number"
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />
-          <button type="submit">Go</button>
+          {gameOver ? (
+            <button disabled={true} type="submit" className="btn-true">
+              Go
+            </button>
+          ) : (
+            <button disabled={false} type="submit">
+              Go
+            </button>
+          )}
         </form>
-        <div>{`남은 기회 : ${chances}`}</div>
+        {chances < 4 ? (
+          <div className="chances-text">
+            <h5>{`남은 기회 : ${chances}`}</h5>
+          </div>
+        ) : (
+          <div>
+            <h5>{`남은 기회 : ${chances}`}</h5>
+          </div>
+        )}
       </div>
-    </div>
+      <div className="num-replay-btn">
+        <button onClick={replay}>Re Play</button>
+      </div>
+    </Container>
   );
 };
 

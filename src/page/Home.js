@@ -11,16 +11,16 @@ const Home = () => {
       path: "rockScissorsPaper",
     },
     {
+      name: "숫자 맞추기",
+      path: "guessingNumbers",
+    },
+    {
       name: "숫자 야구 게임",
       path: "numberBaseball",
     },
     {
       name: "구구단",
       path: "multiplicationTable",
-    },
-    {
-      name: "숫자 맞추기",
-      path: "guessingNumbers",
     },
   ];
 
