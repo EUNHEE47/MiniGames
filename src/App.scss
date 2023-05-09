@@ -10,10 +10,92 @@ $bg-color: #fffbf5;
 $font-color: #674188;
 $box-border: #c3acd0;
 
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Dovemayo_gothic";
   background-color: $bg-color;
   color: $font-color;
+}
+
+.header {
+  box-shadow: 0 0 5px;
+  text-align: center;
+  margin: 0.5em 0 1em;
+  padding: 1em 0;
+  h1 {
+    margin: 0;
+    cursor: pointer;
+  }
+}
+
+.home-game-box {
+  border: 1px solid $box-border;
+  border-radius: 5px;
+  height: 300px;
+  margin: 1em 0;
+  @include flex();
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+    box-shadow: 0 0 10px;
+  }
+}
+
+.game-title {
+  border: 1px solid red;
+  text-align: center;
+  margin-bottom: 3em;
+  h1 {
+    margin: 0;
+  }
+}
+
+// rockscissorspaper
+.rock-box-wrap {
+  @include flex();
+  margin-bottom: 3em;
+}
+
+.show-play {
+  border: 3px solid $box-border;
+  height: 25em;
+  width: 30em;
+  margin: 0 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  img {
+    width: 50%;
+  }
+}
+
+.rock-play-btn {
+  @include flex();
+  button {
+    width: 3em;
+    border: 3px solid $box-border;
+    border-radius: 5px;
+    margin: 0 1em;
+    &:hover {
+      background-color: $box-border;
+    }
+  }
+}
+
+.win {
+  border: 3px solid red;
+}
+
+.lose {
+  border: 3px solid black;
 }
