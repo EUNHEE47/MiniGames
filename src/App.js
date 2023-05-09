@@ -5,7 +5,6 @@ import Home from "./page/Home";
 import Header from "./component/Header";
 import RockScissorsPaper from "./page/RockScissorsPaper";
 import NumberBaseball from "./page/NumberBaseball";
-import MultiplicationTable from "./page/MultiplicationTable";
 import GuessingNumbers from "./page/GuessingNumbers";
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/rockScissorsPaper" element={<RockScissorsPaper />} />
         <Route path="/numberBaseball" element={<NumberBaseball />} />
-        <Route path="/multiplicationTable" element={<MultiplicationTable />} />
         <Route path="/guessingNumbers" element={<GuessingNumbers />} />
       </Routes>
     </div>

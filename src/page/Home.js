@@ -18,10 +18,6 @@ const Home = () => {
       name: "숫자 야구 게임",
       path: "numberBaseball",
     },
-    {
-      name: "구구단",
-      path: "multiplicationTable",
-    },
   ];
 
   const gameBox = (gameName) => {
