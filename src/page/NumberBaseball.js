@@ -55,9 +55,9 @@ const NumberBaseball = () => {
       let strike = 0;
       let ball = 0;
 
-      if (tries.length >= 2) {
+      if (tries.length >= 9) {
         ////////////////////////////////////
-        setResult(`아웃😱 정답은 ? ${answer.join(",")}`);
+        setResult(`아웃🙅‍♂️ 정답은 ? ${answer.join(" ")}`);
         setGameOver(true);
       } else {
         for (let i = 0; i < 4; i++) {
@@ -89,13 +89,23 @@ const NumberBaseball = () => {
         <h1>⚾숫자 야구 게임⚾</h1>
       </div>
       <Row>
-        <Col>
-          <div className="rule">
+        <Col lg={6} md={6} sm={12} className="rule">
+          <div>
             <h3>게임 방법</h3>
           </div>
-          <div className="rule-content">disableddd</div>
+          <h5 className="rule-content">
+            숫자 1~9 중 4개의 숫자를 입력한다. <br />
+            숫자 + 자릿수가 같으면 스트라이크(strike), 숫자만 같으면 볼(ball)
+            <br />
+            (예) 답 : 3142 <br /> 내가 입력한 값 : 1234 <br />
+            [0 스트라이크, 4 볼]
+            <br />
+            4개의 숫자가 모두 틀리면 🙅🏻‍♂️ 아웃(out) 🙅🏻‍♂️
+            <br /> 4개의 숫자가 모두 맞으면 ⚾️ 홈런(Home run) ⚾️ <br />
+            기회는 총 10번!
+          </h5>
         </Col>
-        <Col>
+        <Col lg={6} md={6} sm={12}>
           <div className="baseball-result">
             <h3>{result}</h3>
           </div>

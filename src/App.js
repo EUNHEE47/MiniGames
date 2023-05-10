@@ -6,6 +6,7 @@ import Header from "./component/Header";
 import RockScissorsPaper from "./page/RockScissorsPaper";
 import NumberBaseball from "./page/NumberBaseball";
 import GuessingNumbers from "./page/GuessingNumbers";
+import "animate.css";
 
 function App() {
   return (

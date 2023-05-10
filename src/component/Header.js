@@ -5,7 +5,12 @@ const Header = () => {
   const navigate = useNavigate();
   return (
     <div className="header">
-      <h1 onClick={() => navigate("/")}>🎪Mini Games🎪</h1>
+      <h1
+        className="animate__animated animate__flash"
+        onClick={() => navigate("/")}
+      >
+        🎪Mini Games🎪
+      </h1>
     </div>
   );
 };

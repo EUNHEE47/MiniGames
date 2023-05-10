@@ -37,6 +37,10 @@ $box-border: #c3acd0;
   }
 }
 
+.main-box-wrap {
+  margin-top: 5em;
+}
+
 .home-game-box {
   border: 1px solid $box-border;
   border-radius: 5px;
@@ -48,6 +52,30 @@ $box-border: #c3acd0;
     transform: scale(1.05);
     transition: 0.3s;
     box-shadow: 0 0 10px;
+  }
+  animation: mainBox 3s;
+}
+
+@keyframes mainBox {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@each $item in 0, 1, 2 {
+  .main-#{$item}-box:hover {
+    background-image: url("./img/#{$item}.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    h3 {
+      display: none;
+    }
   }
 }
 
@@ -155,6 +183,12 @@ $box-border: #c3acd0;
   text-align: center;
 }
 
+@media (max-width: 767px) {
+  .rule {
+    margin-bottom: 3em;
+  }
+}
+
 .baseball-form {
   margin: 3em 0;
   input {
@@ -180,7 +214,6 @@ $box-border: #c3acd0;
 }
 
 .baseball-try {
-  border: 1px solid red;
   margin: 3em 0;
   ul {
     padding: 0;
@@ -198,11 +231,8 @@ $box-border: #c3acd0;
   }
 }
 
-.col {
-  border: 1px solid red;
-}
-
 .rule-content {
-  background-color: #c3acd076;
+  background-color: #c3acd050;
   border-radius: 10px;
+  line-height: 2em;
 }

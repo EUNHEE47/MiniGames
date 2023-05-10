@@ -27,12 +27,16 @@ const Home = () => {
       }
     });
   };
+
   return (
-    <Container>
+    <Container className="main-box-wrap">
       <Row>
         {games.map((box, index) => (
-          <Col lg={4} md={6} sm={12} key={index}>
-            <div className="home-game-box" onClick={() => gameBox(box.name)}>
+          <Col lg={4} md={4} sm={12} key={index}>
+            <div
+              className={`home-game-box main-${index}-box`}
+              onClick={() => gameBox(box.name)}
+            >
               <h3>{box.name}</h3>
             </div>
           </Col>
