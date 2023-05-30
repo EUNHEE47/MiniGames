@@ -1,7 +1,7 @@
-<h1>Mini Games</h1>
+# Mini Games
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=python&logoColor=white"> 
-<hr>
-<h3>Overview</h3>
+
+<h1>Overview</h1>
 
 * React Hook의 useState를 활용하였습니다.
 
