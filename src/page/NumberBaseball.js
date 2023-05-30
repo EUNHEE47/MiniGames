@@ -2,7 +2,6 @@
 import React from "react";
 import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { AiOutlineQuestion } from "react-icons/ai";
 
 function getNumbers() {
   const candidate = [1, 2, 3, 4, 5, 6, 7, 8, 9];
