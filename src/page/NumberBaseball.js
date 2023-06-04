@@ -23,8 +23,8 @@ const NumberBaseball = () => {
   const [tries, setTries] = useState([]);
   const [gameOver, setGameOver] = useState(false);
 
-  console.log("answer?", answer);
-  console.log("tries ? ", tries);
+  // console.log("answer?", answer);
+  // console.log("tries ? ", tries);
 
   const userPlay = (e) => {
     e.preventDefault();
